@@ -10978,9 +10978,9 @@ html {
 .masthead .masthead-subheading {
   font-size: 1.25rem;
 }
-.masthead .masthead-avatar {
-  width: 15rem;
-}
+    .masthead .masthead-avatar {
+        width: 25rem; /* Changed from 15rem to 25rem by ZD on 7/23/2023 */
+    }
 
 @media (min-width: 992px) {
   .masthead {
@@ -10988,12 +10988,12 @@ html {
     padding-bottom: 6rem;
   }
   .masthead .masthead-heading {
-    font-size: 4rem;
+    font-size: 3rem; /* Changed from 4rem to 3rem by ZD on 7/23/2023 */
     line-height: 3.5rem;
   }
-  .masthead .masthead-subheading {
-    font-size: 1.5rem;
-  }
+    .masthead .masthead-subheading {
+        font-size: 1rem; /* Changed from 1.5rem to 1rem by ZD on 7/23/2023 */
+    }
 }
 .portfolio .portfolio-item {
   cursor: pointer;
