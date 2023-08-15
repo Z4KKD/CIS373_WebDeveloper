@@ -17,11 +17,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style>
-        .page-section div
+            .page-section1 div
          {
         text-align: center
          }
-         .page-section ul
+
+            .page-section1 ul
          {
             display: inline-block;
             text-align: left;
@@ -140,7 +141,7 @@
             </div>
         </section>
         <!-- Parks Section-->
-        <section class="page-section bg-info text-white mb-0" id="parks">
+        <section class="page-section1 bg-info text-white mb-0" id="parks">
             <div class="container">
                 <!-- Parks Section Heading-->
                 <h2 class="page-section-heading text-center text-uppercase text-white">Parks</h2>
@@ -209,6 +210,47 @@
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
                         <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <!-- Radio buttons for visitor type-->
+                            <div>
+                                <p><h2>Please indicate your park visitor status:</h2></p>
+                                <input type="radio" id="new_visitor" name="visitor_type" value="first">
+                                <label for="first">First time visitor</label><br>
+                                <input type="radio" id="repeat visitor" name="visitor_type" value="repeat">
+                                <label for="repeat">Repeat visitor</label><br>
+                                <input type="radio" id="local_visitor" name="visitor_type" value="local">
+                                <label for="local">Local Resident</label>
+
+                            </div>
+                            <!-- Check boxes for major areas of interest -->
+                            <div>
+                                <p><h5>Please indicate your main area(s) of interest: </h5>
+                                    <input type="checkbox" id="car_tour" name="car_tour" value="Car" />
+                                    <label for="car_tour">Touring by car</label><br>
+                                    <input type="checkbox" id="RV_tour" name="RV_tour" value="RV" />
+                                    <label for="RV_tour">Touring by RV</label><br>
+                                    <input type="checkbox" id="bus_tour" name="bus_tour" value="Bus" />
+                                    <label for="bus_tour">Touring by tour bus</label><br>
+                                    <input type="checkbox" id="hiking" name="hiking" value="Hiking" />
+                                    <label for="hiking">Hiking</label><br>
+                                    <input type="checkbox" id="camping" name="camping" value="Camping" />
+                                    <label for="camping">Camping</label><br>
+                            </div>
+                            <!-- Dropdown menu for park of interest -->
+                            <div>
+                                <p><h5>Please select a park: </h5>
+                                <label for="park_of_interest">Park: </label>
+                                <select name="park_of_interest" id="park_of_interest">
+                                    <option value=" " selected>Select Park</option>
+                                    <option value="Arches">Arches</option>
+                                    <option value="Acadia">Acadia</option>
+                                    <option value="Badlands">Badlands</option>
+                                    <option value="Big Bend">Big Bend</option>
+                                    <option value="Yellowstone">Yellowstone</option>
+                                    <option value="Olympic">Olympic</option>
+                                    <option value="Other">Other (enter name)</option>
+                                </select>
+                                <input type="text" id="other_park"">
+                            </div>
                             <!-- Name input-->
                             <div class="form-floating mb-3">
                                 <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
