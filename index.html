@@ -11,6 +11,20 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <script type = "text/javascript">
+            function getRadioValue(radio) {
+            alert("You selected " + radio.value);
+            }
+            function getCheckboxClick(checkbox) {
+                alert("You selected " + checkbox.value);
+            }
+            function getMenuSelection(menu) {
+                alert("You selected " + menu.value)
+            }
+            function getTextboxEntry(textbox) {
+                alert("You entered " + textbox.value)
+            }
+        </script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -213,33 +227,33 @@
                             <!-- Radio buttons for visitor type-->
                             <div>
                                 <p><h2>Please indicate your park visitor status:</h2></p>
-                                <input type="radio" id="new_visitor" name="visitor_type" value="first">
+                                <input type="radio" id="new_visitor" name="visitor_type" value="first" onchange="getRadioValue(this)">
                                 <label for="first">First time visitor</label><br>
-                                <input type="radio" id="repeat visitor" name="visitor_type" value="repeat">
+                                <input type="radio" id="repeat visitor" name="visitor_type" value="repeat" onchange="getRadioValue(this)">
                                 <label for="repeat">Repeat visitor</label><br>
-                                <input type="radio" id="local_visitor" name="visitor_type" value="local">
+                                <input type="radio" id="local_visitor" name="visitor_type" value="local" onchange="getRadioValue(this)">
                                 <label for="local">Local Resident</label>
 
                             </div>
                             <!-- Check boxes for major areas of interest -->
                             <div>
                                 <p><h5>Please indicate your main area(s) of interest: </h5>
-                                    <input type="checkbox" id="car_tour" name="car_tour" value="Car" />
+                                    <input type="checkbox" id="car_tour" name="car_tour" value="Car" onclick="getCheckboxClick(this)">
                                     <label for="car_tour">Touring by car</label><br>
-                                    <input type="checkbox" id="RV_tour" name="RV_tour" value="RV" />
+                                    <input type="checkbox" id="RV_tour" name="RV_tour" value="RV" onclick="getCheckboxClick(this)">
                                     <label for="RV_tour">Touring by RV</label><br>
-                                    <input type="checkbox" id="bus_tour" name="bus_tour" value="Bus" />
+                                    <input type="checkbox" id="bus_tour" name="bus_tour" value="Bus" onclick="getCheckboxClick(this)">
                                     <label for="bus_tour">Touring by tour bus</label><br>
-                                    <input type="checkbox" id="hiking" name="hiking" value="Hiking" />
+                                    <input type="checkbox" id="hiking" name="hiking" value="Hiking" onclick="getCheckboxClick(this)">
                                     <label for="hiking">Hiking</label><br>
-                                    <input type="checkbox" id="camping" name="camping" value="Camping" />
+                                    <input type="checkbox" id="camping" name="camping" value="Camping" onclick="getCheckboxClick(this)">
                                     <label for="camping">Camping</label><br>
                             </div>
                             <!-- Dropdown menu for park of interest -->
                             <div>
                                 <p><h5>Please select a park: </h5>
                                 <label for="park_of_interest">Park: </label>
-                                <select name="park_of_interest" id="park_of_interest">
+                                <select name="park_of_interest" id="park_of_interest" onchange="getMenuSelection(this)">
                                     <option value=" " selected>Select Park</option>
                                     <option value="Arches">Arches</option>
                                     <option value="Acadia">Acadia</option>
@@ -249,7 +263,7 @@
                                     <option value="Olympic">Olympic</option>
                                     <option value="Other">Other (enter name)</option>
                                 </select>
-                                <input type="text" id="other_park"">
+                                <input type="text" id="other_park" onkeyup="getTextboxEntry(this)">
                             </div>
                             <!-- Name input-->
                             <div class="form-floating mb-3">
