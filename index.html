@@ -11,85 +11,16 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <script type = "text/javascript">
-            function validateForm() {
-                let x1 = document.forms["contactForm"]["name"].value;
-                if (x1 == "") {
-                    alert("Name must be filled in");
-                    return false;
-                }
-                let x2 = document.forms["contactForm"]["email"].value;
-                if (x2 == "") {
-                    alert("Email must be filled in");
-                    return false;
-                }
-                let mailformat = new RegExp('[a-z0-9]+@[a-z]+\.[a-z]{2,3}');
-                if (!document.forms["contactForm"]["email"].value.match(mailformat))
-                {
-                    alert("You have entered an invalid email address");
-                    return false;
-                }
-                let x3 = document.forms["contactForm"]["phone"].value;
-                if (x3 == "") {
-                    alert("Phone must be filled in");
-                    return false;
-                }
-                let x4 = document.forms["contactForm"]["message"].value;
-                if (x4 == "") {
-                    alert("Message must be filled in");
-                    return false;
-                }
-            }
-            function getRadioValue(radio) {
-            alert("You selected " + radio.value);
-            }
-            function getCheckboxClick(checkbox) {
-                alert("You selected " + checkbox.value);
-            }
-            function getMenuSelection(menu) {
-                alert("You selected " + menu.value)
-            }
-            function getTextboxEntry(textbox) {
-                alert("You entered " + textbox.value)
-            }
-        </script>
+        <!-- JavaScript code added for CIS-373-->
+        <script src="js/cis373.js"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+        <!--CSS Styles added for CIS373 -->
+        <link href="css/cis373.css" rel="stylesheet" />
         <style>
-            .page-section1 div
-         {
-        text-align: center
-         }
-
-            .page-section1 ul
-         {
-            display: inline-block;
-            text-align: left;
-         }
-        .list-text-color {
-            color:white;
-            font-size: 1.3em;
-        }
-        .submit_button{
-            background-color: #4CAF50;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-        .submit_button:hover{
-            opacity: 1;
-        }
         </style>
     </head>
     <body id="page-top">
@@ -221,6 +152,74 @@
                     <li><a href="https://www.nps.gov/yell/index.htm" alt="Yellowstone"><span class="list-text-color">Yellowstone National Park</span></a></li>
                     <li><a href="https://www.nps.gov/olym/index.htm" alt="Olympic"><span class="list-text-color">Olympic National Park</span></a></li>
                 </ul>
+                <center>
+                    <video width="320" height="240" controls>
+                        <source src="./assets/video/snow.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video width="320" height="240" controls>
+                        <source src="./assets/video/sky.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video width="320" height="240" controls>
+                        <source src="./assets/video/grass.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </center>
+            <div style="width:500px; margin:auto; position:relative;">
+                <audio controls style="width:100%;">
+                    <source src="./assets/Audio/calm.mp3">This browser does not support the audio tag
+                </audio>
+            </div>
+            </div>
+            <div>
+                <table class="center">
+                    <caption class="caption">National Parks History</caption>
+                    <tr>
+                        <th>National Park</th>
+                        <th>Year Established</th>
+                    </tr>
+                    <tr>
+                        <td>Achthes</td>
+                        <td style="text-align: center;">1929</td>
+                    </tr>
+                    <tr>
+                        <td>Bryce Canyon</td>
+                        <td style="text-align: center;">1923</td>
+                    </tr>
+                    <tr>
+                        <td>Glacier</td>
+                        <td style="text-align: center;">1910</td>
+                    </tr>
+                    <tr>
+                        <td>Grand Canyon</td>
+                        <td style="text-align: center;">1919</td>
+                    </tr>
+                    <tr>
+                        <td>Grand Teton</td>
+                        <td style="text-align: center;">1929</td>
+                    </tr>
+                    <tr>
+                        <td>Rocky Mountain</td>
+                        <td style="text-align: center;">1915</td>
+                    </tr>
+                    <tr>
+                        <td>Sequoia</td>
+                        <td style="text-align: center;">1890</td>
+                    </tr>
+                    <tr>
+                        <td>Yellowstone</td>
+                        <td style="text-align: center;">1872</td>
+                    </tr>
+                    <tr>
+                        <td>Yosemite</td>
+                        <td style="text-align: center;">1890</td>
+                    </tr>
+                    <tr>
+                        <td>Zion</td>
+                        <td style="text-align: center;">1909</td>
+                    </tr>
+                </table>
             </div>
         </section>
         <!-- About Section-->
@@ -269,7 +268,8 @@
                         <!-- https://startbootstrap.com/solution/contact-forms-->
                         <!-- to get an API token!-->
                         <!--- action"./php/formSubmit.php" !-->
-                        <form id="contactForm" action="mailto:instructor@strayer.edu?subject=Request%20for%20Information" onsubmit="return validateForm() method="post">
+                        <!--- action="mailto:instructor@strayer.edu?subject=Request%20for%20Information" method="post" !-->
+                        <form id="contactForm" onsubmit="return validateForm()">
                             <!-- Radio buttons for visitor type-->
                             <div>
                                 <p><h2>Please indicate your park visitor status:</h2></p>
@@ -378,16 +378,16 @@
                     <!-- Footer Social Icons-->
                     <div class="col-lg-4 mb-5 mb-lg-0">
                         <h4 class="text-uppercase mb-4">Around the Web</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.facebook.com/getbootstrap"><i class="fab fa-fw fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/explore/tags/getbootstrap/top"><i class="fab fa-fw fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://www.youtube.com/results?search_query=getbootstrap"><i class="fab fa-fw fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social mx-1" href="https://dribbble.com/tags/bootstrap"><i class="fab fa-fw fa-dribbble"></i></a>
                     </div>
                     <!-- Footer About Text-->
                     <div class="col-lg-4">
-                        <h4 class="text-uppercase mb-4">About Freelancer</h4>
+                        <h4 class="text-uppercase mb-4">About this Freelancer</h4>
                         <p class="lead mb-0">
-                            Freelance is a free to use, MIT licensed Bootstrap theme created by
+                            This website is created for the use of finding national park information
                             <a href="http://startbootstrap.com">Start Bootstrap</a>
                             .
                         </p>
@@ -397,7 +397,7 @@
         </footer>
         <!-- Copyright Section-->
         <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; Your Website 2023</small></div>
+            <div class="container"><small>Copyright &copy; Zachary Duncan September 5, 2023</small></div>
         </div>
         <!-- Portfolio Modals-->
         <!-- Portfolio Modal 1-->
